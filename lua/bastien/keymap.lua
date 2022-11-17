@@ -12,7 +12,14 @@ function map(mode, lhs, rhs, opts)
                             end
 
 
-map("n","<leader>m", ":MaximizerToggle!<CR>")
-map("n", "<c-q>", ":Ttoggle<CR>")
+map("n","<leader>m", ":MaximizerToggle!<CR>i ")
+-- kassio/neoterm 
+map("n", "<c-q>", ":vs  | :Ttoggle<CR>")
 map("i", "<c-q>", "<Esc>:Ttoggle<CR>")
--- map("t", "<c-q>", "<c-\><c-n>:Ttoggle<CR>")
+map("t", "ZZ", "<c-\\><c-n>:Ttoggle<CR>")
+-- neoformat 
+map("n", "<leader>F", ":Neoformat prettier<CR>")
+-- junegunn/fzf.vim  
+map("n", "<leader><space>", ":GFiles<CR>")
+-- jump to definition for nvim autocompletion 
+map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')

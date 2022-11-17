@@ -37,6 +37,9 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-cmdline'
   use 'saadparwaiz1/cmp_luasnip'
   use 'hrsh7th/cmp-nvim-lsp'
+-- fuzzy finding 
+  use { "junegunn/fzf", run = ":call fzf#install()" }
+  use "junegunn/fzf.vim"
 end)
 -- -- auto completion 
 -- -- use 'nvim-lua/completion-nvim'
