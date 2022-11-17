@@ -4,6 +4,7 @@
 require('bastien.packer')
 require('bastien.set')
 require('bastien.cmp')
+require('bastien.keymap')
 --vim.g.mapleader = " "
 
 --vim.cmd [[nnoremap <F9> :echo system('python "' . expand('%') . '"')<cr>]]
