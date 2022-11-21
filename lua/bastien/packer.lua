@@ -37,17 +37,15 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-cmdline'
   use 'saadparwaiz1/cmp_luasnip'
   use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lua'
 -- fuzzy finding 
   use { "junegunn/fzf", run = ":call fzf#install()" }
   use "junegunn/fzf.vim"
+  -- to go to definition 
+  use {'rmagatti/goto-preview', config = function() require('goto-preview').setup {} end}
+  use 'pechorin/any-jump.vim'
+  -- to highlight erros 
+  use 'dense-analysis/ale'
+  -- to get output in anoter window (REPL)
+  use 'tpope/vim-dispatch'
 end)
--- -- auto completion 
--- -- use 'nvim-lua/completion-nvim'
--- -- required plugin for the auto-completion 
--- -- use 'neovim/nvim-lspconfig'
--- use 'hrsh6th/cmp-nvim-lsp'
--- use 'hrsh6th/cmp-buffer'
---use 'hrsh6th/cmp-path'
--- use 'hrsh6th/cmp-cmdline'
-
--- end)
