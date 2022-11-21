@@ -1,4 +1,5 @@
 vim.cmd[[autocmd FileType python nnoremap <buffer> <F9> :w \| Dispatch python  % <CR>]]
+vim.cmd[[autocmd FileType python inoremap <buffer> <F9> :w \| Dispatch python  % <CR>]]
 
 vim.g.mapleader = " "
 
@@ -11,7 +12,7 @@ function map(mode, lhs, rhs, opts)
                                 vim.api.nvim_set_keymap(mode, lhs, rhs, options)
                             end
 
-map("n","<leader>m", ":MaximizerToggle!<CR>i ")
+map("n","<leader>m", ":MaximizerToggle!<CR>")
 -- kassio/neoterm 
 map("n", "<c-q>", ":vs  | :Ttoggle<CR>")
 map("i", "<c-q>", "<Esc>| :vs | :Ttoggle<CR>")
