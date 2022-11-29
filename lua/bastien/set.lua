@@ -22,3 +22,9 @@ vim.g.lightline = {
 	      active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
 	        component_function = { gitbranch = 'gitbranch#name'},
 	}
+
+-- remove auto-commentary at the next line 
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
+
