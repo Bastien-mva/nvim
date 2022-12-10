@@ -4,6 +4,9 @@ vim.cmd[[autocmd FileType python inoremap <buffer> <F8> :w \| Dispatch python  %
 vim.g.mapleader = " "
 
 
+
+
+
 function map(mode, lhs, rhs, opts)
         local options = { noremap = true }
             if opts then
@@ -22,7 +25,7 @@ map("n", "<leader>F", ":Neoformat prettier<CR>")
 -- junegunn/fzf.vim  
 map("n", "<leader><space>", ":GFiles<CR>")
 -- jump to definition for nvim autocompletion 
-map("n", "gd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>")
+-- map("n", "gd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>")
 
 vim.g.tmux_navigator_no_mappings = 1
 vim.cmd[[noremap <silent> <leader>h :w<CR>\|:<C-U>TmuxNavigateLeft<cr>]]
@@ -31,3 +34,8 @@ vim.cmd[[noremap <silent> <leader>k :w<CR>\|:<C-U>TmuxNavigateUp<cr>]]
 vim.cmd[[noremap <silent> <leader>l :w<CR>\|:<C-U>TmuxNavigateRight<cr>]]
 vim.cmd[[noremap <silent> <leader>, <CR>\|:<C-U>TmuxNavigatePrevious<cr>]]
 
+
+
+-- anyjump 
+vim.g.any_jump_disable_default_keybindings = 1
+map("n","gdp", ":AnyJump<CR>")

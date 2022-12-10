@@ -42,7 +42,7 @@ return require('packer').startup(function()
   use { "junegunn/fzf", run = ":call fzf#install()" }
   use "junegunn/fzf.vim"
   -- to go to definition 
-  use {'rmagatti/goto-preview', config = function() require('goto-preview').setup {} end}
+  -- use {'rmagatti/goto-preview', config = function() require('goto-preview').setup {} end}
   use 'pechorin/any-jump.vim'
   -- to highlight erros 
   use 'dense-analysis/ale'
