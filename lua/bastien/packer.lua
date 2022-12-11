@@ -39,11 +39,16 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
 -- fuzzy finding 
-  use { "junegunn/fzf", run = ":call fzf#install()" }
-  use "junegunn/fzf.vim"
+  -- use { "junegunn/fzf", run = ":call fzf#install()" }
+  use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        -- or                            , branch = '0.1.x',
+          requires = { {'nvim-lua/plenary.nvim'} }
+      }
+  -- use "junegunn/fzf.vim"
   -- to go to definition 
   -- use {'rmagatti/goto-preview', config = function() require('goto-preview').setup {} end}
-  -- use 'pechorin/any-jump.vim'
+  use 'pechorin/any-jump.vim'
   -- to highlight erros 
   use 'dense-analysis/ale'
   -- to get output in anoter window (REPL)
