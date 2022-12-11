@@ -36,6 +36,13 @@ vim.cmd[[noremap <silent> <leader>, <CR>\|:<C-U>TmuxNavigatePrevious<cr>]]
 
 
 
+-- fuzzy finding with telescope 
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>tf', builtin.find_files, {})
+vim.keymap.set('n', '<leader>tg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>tb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>th', builtin.help_tags, {})
+
 -- anyjump 
 vim.g.any_jump_disable_default_keybindings = 1
 map("n","gdp", ":AnyJump<CR>")
