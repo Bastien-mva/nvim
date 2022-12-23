@@ -1,48 +1,31 @@
-vim.cmd[[autocmd FileType python nnoremap <buffer> <F8> :w \| Dispatch python  % <CR>]]
-vim.cmd[[autocmd FileType r nnoremap <buffer> <F8> :w \| Dispatch r  % <CR>]]
-
 vim.g.mapleader = " "
-
-
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- deoplete auto completion for latex 
+-- vim.cmd[[let g:deoplete#enable_at_startup = 1]]
 
 
 
 function map(mode, lhs, rhs, opts)
-        local options = { noremap = true }
-            if opts then
-                        options = vim.tbl_extend("force", options, opts)
-                            end
-                                vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-                            end
+local options = { noremap = true }
+if opts then
+options = vim.tbl_extend("force", options, opts)
+end
+vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
 
-map("n","<leader>f", ":MaximizerToggle!<CR>")
--- kassio/neoterm 
-map("n", "<c-q>", ":vs  | :Ttoggle<CR>")
-map("i", "<c-q>", "<Esc>| :vs | :Ttoggle<CR>")
-map("t", "ZZ", "<c-\\><c-n>:Ttoggle<CR>")
--- neoformat 
-map("n", "<leader>F", ":Neoformat prettier<CR>")
--- junegunn/fzf.vim  
-map("n", "<leader><space>", ":GFiles<CR>")
--- jump to definition for nvim autocompletion 
--- map("n", "gd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>")
-
-vim.g.tmux_navigator_no_mappings = 1
-vim.cmd[[noremap <silent> <leader>h :w<CR>\|:<C-U>TmuxNavigateLeft<cr>]]
-vim.cmd[[noremap <silent> <leader>j :w<CR>\|:<C-U>TmuxNavigateDown<cr>]]
-vim.cmd[[noremap <silent> <leader>k :w<CR>\|:<C-U>TmuxNavigateUp<cr>]]
-vim.cmd[[noremap <silent> <leader>l :w<CR>\|:<C-U>TmuxNavigateRight<cr>]]
-vim.cmd[[noremap <silent> <leader>, <CR>\|:<C-U>TmuxNavigatePrevious<cr>]]
+-- can remove and copy lines adding a leader in order to paste with ctrl v 
+map("n", "<leader>yy",' "+yy')
+map("n", "<leader>dd",' "+dd')
+map("i","<C-v>", "<C-r>+")
+-- simple grep to find words in files 
+vim.keymap.set('n', '<leader>tp', function() 
+    builtin.grep_string({search = vim.fn.input("Grep > ")});
+end
+) 
 
 
+map("n", "<C-j>", "10j")
+map("n", "<C-h>", "10h")
+map("n", "<C-l>", "10l")
+map("n", "<C-k>", "10k")
 
--- fuzzy finding with telescope 
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>tf', builtin.find_files, {})
-vim.keymap.set('n', '<leader>tg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>tb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>th', builtin.help_tags, {})
-
--- anyjump 
-vim.g.any_jump_disable_default_keybindings = 1
-map("n","gdp", ":AnyJump<CR>")
