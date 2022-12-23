@@ -17,8 +17,6 @@ return require('packer').startup(function()
   use 'tomasiser/vim-code-dark'
 -- -- lightline 
   use 'itchyny/lightline.vim'
--- -- spawn a terminal 
-  use 'kassio/neoterm' 
 -- -- maximize the splits 
   use 'szw/vim-maximizer'
 -- -- easily move across splits 
@@ -30,31 +28,57 @@ return require('packer').startup(function()
 -- -- pairs brackets 
   use 'jiangmiao/auto-pairs'
 -- auto completion 
-  use 'hrsh7th/nvim-cmp'
+  -- use 'hrsh7th/nvim-cmp'
   -- plugins for autocompletion 
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'saadparwaiz1/cmp_luasnip'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-nvim-lua'
+  -- use 'hrsh7th/cmp-buffer'
+  -- use 'hrsh7th/cmp-path'
+  -- use 'hrsh7th/cmp-cmdline'
+  -- use 'saadparwaiz1/cmp_luasnip'
+  -- use 'hrsh7th/cmp-nvim-lsp'
+  -- use 'hrsh7th/cmp-nvim-lua'
 -- fuzzy finding 
-  -- use { "junegunn/fzf", run = ":call fzf#install()" }
-  use {
+-- use { "junegunn/fzf", run = ":call fzf#install()" }
+   use {
+         'VonHeikemen/lsp-zero.nvim',
+           requires = {
+                   -- LSP Support
+                       {'neovim/nvim-lspconfig'},
+                           {'williamboman/mason.nvim'},
+                               {'williamboman/mason-lspconfig.nvim'},
+
+                                   -- Autocompletion
+                                       {'hrsh7th/nvim-cmp'},
+                                           {'hrsh7th/cmp-buffer'},
+                                               {'hrsh7th/cmp-path'},
+                                                   {'saadparwaiz1/cmp_luasnip'},
+                                                       {'hrsh7th/cmp-nvim-lsp'},
+                                                           {'hrsh7th/cmp-nvim-lua'},
+
+                                                               -- Snippets
+                                                                   {'L3MON4D3/LuaSnip'},
+                                                                       {'rafamadriz/friendly-snippets'},
+                                                                         }
+                                                                     }
+    use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
           requires = { {'nvim-lua/plenary.nvim'} }
       }
   -- use "junegunn/fzf.vim"
   -- to go to definition 
-  -- use {'rmagatti/goto-preview', config = function() require('goto-preview').setup {} end}
-  use 'pechorin/any-jump.vim'
+  use {'rmagatti/goto-preview', config = function() require('goto-preview').setup{default_mappings = true}end }
+  -- use 'pechorin/any-jump.vim'
   -- to highlight erros 
   use 'dense-analysis/ale'
   -- to get output in anoter window (REPL)
   use 'tpope/vim-dispatch'
 
-  use 'xuhdev/vim-latex-live-preview'
+  -- error highlighting 
+  use 'lervag/vimtex'
+  -- use 'Shougo/deoplete.nvim'
+  -- use 'sirVer/ultisnips'
+  -- use 'honza/vim-snippets'
+  use 'engeljh/vim-latexfmt'
 
-
+  use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 end)
