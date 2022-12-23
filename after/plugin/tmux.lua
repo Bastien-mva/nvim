@@ -6,6 +6,7 @@ end
 vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+vim.g.mapleader = " " 
 map("n","<leader>f", ":MaximizerToggle!<CR>")
 
 
