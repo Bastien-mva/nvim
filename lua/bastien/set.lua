@@ -1,5 +1,7 @@
 vim.opt.guicursor = ""
 
+vim.cmd[[set nocompatible]]
+
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -26,5 +28,6 @@ vim.g.lightline = {
 -- remove auto-commentary at the next line 
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
 
 
