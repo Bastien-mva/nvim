@@ -55,8 +55,10 @@ return require('packer').startup(function()
                                                            {'hrsh7th/cmp-nvim-lua'},
 
                                                                -- Snippets
-                                                                   {'L3MON4D3/LuaSnip'},
-                                                                       {'rafamadriz/friendly-snippets'},
+                                                                   {'L3MON4D3/LuaSnip'
+                                                               },
+                                                               {'honza/vim-snippets'}, 
+                                                                       -- {'prafamadriz/friendly-snippets'},
                                                                          }
                                                                      }
     use {
@@ -81,4 +83,5 @@ return require('packer').startup(function()
   use 'engeljh/vim-latexfmt'
 
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use ('RyanMillerC/better-vim-tmux-resizer')
 end)
