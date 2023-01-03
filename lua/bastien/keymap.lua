@@ -14,11 +14,13 @@ end
 vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 -- can remove and copy lines adding a leader in order to paste with ctrl v 
-map("n", "<leader>y",  "\"+y") map("v", "<leader>y",  "\"+y") map("n", "<leader>y",  "\"+Y") map("i","<C-v>", "<C-r>+")
+map("n", "<leader>y",  "\"+y")
+map("v", "<leader>y",  "\"+y")
+map("n", "<leader>y",  "\"+Y")
+map("i","<C-v>", "<C-r>+")
 
 map("n","<leader>f", ":MaximizerToggle!<CR>")
 
-map("n", "<a-S-e>", "x $ p")
 vim.g.tmux_navigator_no_mappings = 1
 
 map("i","jk", "<Esc>")
