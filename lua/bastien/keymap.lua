@@ -56,3 +56,7 @@ vim.keymap.set("n", "²j", ":TmuxResizeDown<CR>")
 
 vim.keymap.set("n", "<F6>", ":vs ~/.local/share/nvim/site/pack/packer/start/vim-snippets/snippets/ <CR>")
 
+vim.keymap.set("n", "<leader>²", ":%s/")
+vim.keymap.set("n", "<leader>*", "yiw :%s/<C-r>0/")
+vim.keymap.set("n", "<leader><leader>²", ":argdo %s/")
+vim.keymap.set("n", "<leader><leader>*", "yiw :argdo %s/<C-r>0/")
