@@ -5,6 +5,12 @@
 -- Only required if you have packer configured as `opt`
 
 vim.cmd [[packadd packer.nvim]]
+-- require'lspconfig'.pyright.setup{}
+
+
+require("mason").setup({
+        PATH = "prepend", -- "skip" seems to cause the spawning error
+    })
 
 return require('packer').startup(function()
   -- Packer can manage itself
@@ -25,6 +31,8 @@ return require('packer').startup(function()
   use 'tpope/vim-commentary'
 -- -- format  code 
   use 'sbdchd/neoformat' 
+  -- use('jose-elias-alvarez/null-ls.nvim')
+  -- use('MunifTanjim/prettier.nvim')
 -- -- pairs brackets 
   use 'jiangmiao/auto-pairs'
 -- auto completion 
@@ -42,10 +50,9 @@ return require('packer').startup(function()
          'VonHeikemen/lsp-zero.nvim',
            requires = {
                    -- LSP Support
-                       {'neovim/nvim-lspconfig'},
                            {'williamboman/mason.nvim'},
-                               {'williamboman/mason-lspconfig.nvim'},
-
+                       {'neovim/nvim-lspconfig'},
+                        {'williamboman/mason-lspconfig.nvim'},
                                    -- Autocompletion
                                        {'hrsh7th/nvim-cmp'},
                                            {'hrsh7th/cmp-buffer'},
@@ -74,7 +81,6 @@ return require('packer').startup(function()
   use 'dense-analysis/ale'
   -- to get output in anoter window (REPL)
   use 'tpope/vim-dispatch'
-
   -- error highlighting 
   use 'lervag/vimtex'
   -- use 'Shougo/deoplete.nvim'

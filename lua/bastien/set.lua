@@ -1,7 +1,7 @@
 vim.opt.guicursor = ""
 
 vim.cmd[[set nocompatible]]
-
+vim.cmd[[let g:neoformat_try_node_exe = 1]]
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -30,4 +30,5 @@ vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 
-
+vim.cmd[[let g:neoformat_enabled_python = ["yapf"] ]]
+vim.g.neoformat_try_node_exe = 1 
