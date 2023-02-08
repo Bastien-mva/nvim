@@ -5,4 +5,5 @@ vim.cmd[[autocmd FileType html nnoremap <buffer> <F8> :w  <CR>  ]]
 vim.cmd[[autocmd FileType css nnoremap <buffer> <F8> :w  <CR>  ]]
 vim.cmd[[autocmd FileType sh nnoremap <buffer> <F8> :w  \|sp \| hor resize 10 \| term ./% <CR>]]
 vim.cmd[[autocmd FileType sh nnoremap <buffer> <F9> :w  \|sp \| hor resize 10 \| term ./% ]]
+vim.cmd[[autocmd FileType rst nnoremap <buffer> <F8> :w  \|:!sphinx-build -b html . _html <CR>]]
 
