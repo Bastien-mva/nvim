@@ -30,5 +30,9 @@ vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 
-vim.cmd[[let g:neoformat_enabled_python = ["yapf"] ]]
+vim.cmd[[let g:neoformat_enabled_python = ["black"] ]]
 vim.g.neoformat_try_node_exe = 1 
+vim.cmd[[augroup fmt
+  autocmd!
+    autocmd BufWritePre * undojoin | Neoformat
+    augroup END]]
