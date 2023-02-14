@@ -62,3 +62,5 @@ vim.keymap.set("n", "<leader><leader>²", ":argdo %s/")
 vim.keymap.set("n", "<leader><leader>*", "yiw :argdo %s/<C-r>0/")
 
 vim.cmd[[autocmd BufWritePre * :%s/\s\+$//e]]
+
+vim.keymap.set("n", "<leader>_" ,":!")
