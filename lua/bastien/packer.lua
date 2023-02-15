@@ -19,32 +19,24 @@ return require('packer').startup(function()
   use 'ThePrimeagen/vim-be-good'
 -- to see the branch name in the ligheline
   use 'itchyny/vim-gitbranch'
--- -- dark scheme 
+-- -- dark scheme
   use 'tomasiser/vim-code-dark'
--- -- lightline 
+-- -- lightline
   use 'itchyny/lightline.vim'
--- -- maximize the splits 
+-- -- maximize the splits
   use 'szw/vim-maximizer'
--- -- easily move across splits 
+-- -- easily move across splits
   use 'christoomey/vim-tmux-navigator'
--- -- Comment code 
+-- -- Comment code
   use 'tpope/vim-commentary'
--- -- format  code 
-  use 'sbdchd/neoformat' 
+-- -- format  code
+  use 'sbdchd/neoformat'
   -- use('jose-elias-alvarez/null-ls.nvim')
   -- use('MunifTanjim/prettier.nvim')
--- -- pairs brackets 
+-- -- pairs brackets
   use 'jiangmiao/auto-pairs'
--- auto completion 
-  -- use 'hrsh7th/nvim-cmp'
-  -- plugins for autocompletion 
-  -- use 'hrsh7th/cmp-buffer'
-  -- use 'hrsh7th/cmp-path'
-  -- use 'hrsh7th/cmp-cmdline'
-  -- use 'saadparwaiz1/cmp_luasnip'
-  -- use 'hrsh7th/cmp-nvim-lsp'
-  -- use 'hrsh7th/cmp-nvim-lua'
--- fuzzy finding 
+  use 'neomake/neomake'
+-- fuzzy finding
 -- use { "junegunn/fzf", run = ":call fzf#install()" }
    use {
          'VonHeikemen/lsp-zero.nvim',
@@ -64,7 +56,7 @@ return require('packer').startup(function()
                                                                -- Snippets
                                                                    {'L3MON4D3/LuaSnip'
                                                                },
-                                                               {'honza/vim-snippets'}, 
+                                                               {'honza/vim-snippets'},
                                                                        -- {'prafamadriz/friendly-snippets'},
                                                                          }
                                                                      }
@@ -74,14 +66,14 @@ return require('packer').startup(function()
           requires = { {'nvim-lua/plenary.nvim'} }
       }
   -- use "junegunn/fzf.vim"
-  -- to go to definition 
+  -- to go to definition
   use {'rmagatti/goto-preview', config = function() require('goto-preview').setup{default_mappings = true}end }
   -- use 'pechorin/any-jump.vim'
-  -- to highlight erros 
-  use 'dense-analysis/ale'
+  -- to highlight erros
+  -- use 'dense-analysis/ale'
   -- to get output in anoter window (REPL)
   use 'tpope/vim-dispatch'
-  -- error highlighting 
+  -- error highlighting
   use 'lervag/vimtex'
   -- use 'Shougo/deoplete.nvim'
   -- use 'sirVer/ultisnips'
