@@ -45,9 +45,10 @@ vim.keymap.set("n", "c,", "c$")
 vim.keymap.set("n", "y,", "y$")
 vim.keymap.set("x", ",", "$")
 vim.keymap.set("x", "<leader>p", "\"_dP")
-
 vim.g.tmux_resizer_no_mappings = 1
 
+-- run black on quit, only on python files
+-- vim.cmd[[autocmd FileType python          nnoremap ZZ  :w <CR> :! black % <CR>  :exit <CR> ]]
 vim.keymap.set("n", "²h", ":TmuxResizeLeft<CR>")
 vim.keymap.set("n", "²l", ":TmuxResizeRigh<CR>")
 vim.keymap.set("n", "²k", ":TmuxResizeUp<CR>")

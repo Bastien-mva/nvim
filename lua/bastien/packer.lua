@@ -29,8 +29,10 @@ return require('packer').startup(function()
   use 'christoomey/vim-tmux-navigator'
 -- -- Comment code
   use 'tpope/vim-commentary'
+  use 'vim-scripts/Conque-Shell'
+  -- use 'dense-analysis/ale'
 -- -- format  code
-  use 'sbdchd/neoformat'
+  -- use 'sbdchd/neoformat'
   -- use('jose-elias-alvarez/null-ls.nvim')
   -- use('MunifTanjim/prettier.nvim')
 -- -- pairs brackets
