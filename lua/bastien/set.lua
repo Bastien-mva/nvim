@@ -40,23 +40,23 @@ vim.g.neoformat_try_node_exe = 1
 -- vim.cmd[[let g:ale_linters={
 --     \ 'python': ['pylint'],
 --     \}]]
-vim.cmd[[call neomake#configure#automake('nrw', 1)]]
+-- vim.cmd[[call neomake#configure#automake('nrw', 1)]]
 
-vim.cmd[[let g:neomake_python_enabled_makers = ['pylint'] ]]
--- -- remove unwanted errors
-vim.cmd[[let g:neomake_python_pylint_maker = {
-\ 'args': [
-\ '-d', 'E1101','C0114','C0116','C0103',
-\ '-f', 'text',
-\ '--msg-template="{path}:{line}:{column}:{C}: [{symbol}] {msg}"',
-\ '-r', 'n'
-\ ],
-\ 'errorformat':
-\ '%A%f:%l:%c:%t: %m,' .
-\ '%A%f:%l: %m,' .
-\ '%A%f:(%l): %m,' .
-\ '%-Z%p^%.%#,' .
-\ '%-G%.%#',
-\ }
-]]
+-- vim.cmd[[let g:neomake_python_enabled_makers = ['pylint'] ]]
+-- -- -- remove unwanted errors
+-- vim.cmd[[let g:neomake_python_pylint_maker = {
+-- \ 'args': [
+-- \ '-d', 'E1101','C0114','C0116','C0103',
+-- \ '-f', 'text',
+-- \ '--msg-template="{path}:{line}:{column}:{C}: [{symbol}] {msg}"',
+-- \ '-r', 'n'
+-- \ ],
+-- \ 'errorformat':
+-- \ '%A%f:%l:%c:%t: %m,' .
+-- \ '%A%f:%l: %m,' .
+-- \ '%A%f:(%l): %m,' .
+-- \ '%-Z%p^%.%#,' .
+-- \ '%-G%.%#',
+-- \ }
+-- ]]
 -- -- C0103, C0111',
