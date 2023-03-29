@@ -38,7 +38,7 @@ return require('packer').startup(function()
   -- use('MunifTanjim/prettier.nvim')
 -- -- pairs brackets
   use 'jiangmiao/auto-pairs'
-  -- use 'neomake/neomake'
+  use 'neomake/neomake'
 -- fuzzy finding
 -- use { "junegunn/fzf", run = ":call fzf#install()" }
    use {'VonHeikemen/lsp-zero.nvim',
