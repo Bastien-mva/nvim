@@ -36,6 +36,7 @@ return require('packer').startup(function()
   -- use 'sbdchd/neoformat'
   -- use('jose-elias-alvarez/null-ls.nvim')
   -- use('MunifTanjim/prettier.nvim')
+  -- taggin bar to know where we are
 -- -- pairs brackets
   use 'jiangmiao/auto-pairs'
   use 'neomake/neomake'

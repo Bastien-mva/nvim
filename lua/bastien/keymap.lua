@@ -48,7 +48,7 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.g.tmux_resizer_no_mappings = 1
 
 -- run black on quit, only on python files
--- vim.cmd[[autocmd FileType python          nnoremap ZZ  :w <CR> :! black % <CR>  :exit <CR> ]]
+-- vim.cmd[[autocmd FileType python    nnoremap ZZ  :w <CR> :! black % <CR>  :exit <CR> ]]
 vim.keymap.set("n", "²h", ":TmuxResizeLeft<CR>")
 vim.keymap.set("n", "²l", ":TmuxResizeRigh<CR>")
 vim.keymap.set("n", "²k", ":TmuxResizeUp<CR>")
@@ -61,7 +61,12 @@ vim.keymap.set("n", "<leader>²", ":%s/")
 vim.keymap.set("n", "<leader>*", "yiw :%s/<C-r>0/")
 vim.keymap.set("n", "<leader><leader>²", ":argdo %s/")
 vim.keymap.set("n", "<leader><leader>*", "yiw :argdo %s/<C-r>0/")
+vim.keymap.set("n", "<leader>.*", ":.s/")
+vim.keymap.set("n", "<leader>..*", "yiw :.s/<C-r>0/")
 
 vim.cmd[[autocmd BufWritePre * :%s/\s\+$//e]]
 
 vim.keymap.set("n", "<leader>_" ,":!")
+-- opens up a terminal
+vim.keymap.set("n","<leader><leader>k" ,":sp | hor resize 10 | term<CR> A")
+--\| hor resize 10 \| term
