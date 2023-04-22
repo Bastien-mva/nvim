@@ -1,5 +1,5 @@
 vim.cmd[[noremap <silent> <leader>h :w<CR>\|:<C-U>TmuxNavigateLeft<cr>]]
-vim.cmd[[noremap <silent> <leader>j :w<CR>\|:<C-U>TmuxNavigateDown<cr>]]
+vim.cmd[[noremap <silent> <leader>j :<C-U>TmuxNavigateDown<cr>]]
 vim.cmd[[noremap <silent> <leader>k :w<CR>\|:<C-U>TmuxNavigateUp<cr>]]
 vim.cmd[[noremap <silent> <leader>l :w<CR>\|:<C-U>TmuxNavigateRight<cr>]]
 vim.cmd[[noremap <silent> <leader>, <CR>\|:<C-U>TmuxNavigatePrevious<cr>]]

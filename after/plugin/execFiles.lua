@@ -1,5 +1,5 @@
 vim.cmd[[autocmd FileType python nnoremap <buffer> <F8> :w \| sp \| hor resize 10 \| term python3 % <CR>]]
--- vim.cmd[[autocmd FileType python nnoremap <buffer> <F8> :w <CR> :vnew term://zsh<CR> i python3 % <CR>]]-- \| sp \| hor resize 10 \| term python3 % <CR>]]
+vim.cmd[[autocmd FileType python nnoremap <buffer> <F1> :w <CR> \| :!black % <CR>]]
 vim.cmd[[autocmd FileType python inoremap <buffer> <F8> <Esc> :w \| sp \| hor resize 10 \| term python3 % <CR>]]
 vim.cmd[[autocmd FileType r nnoremap <buffer> <F8> :w \| sp \| hor resize 10 \| term r % <CR>]]
 vim.cmd[[autocmd FileType r inoremap <buffer> <F8> <Esc> :w sp \| hor resize 10 \| term r % <CR>]]
