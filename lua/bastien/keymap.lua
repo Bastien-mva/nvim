@@ -29,11 +29,7 @@ map("n", "<C-h>", "10h")
 map("n", "<C-l>", "10l")
 map("n", "<C-k>", "10k")
 
--- simple grep to find words in files
-vim.keymap.set('n', '<leader>tp', function()
-    builtin.grep_string({search = vim.fn.input("Grep > ")});
-end
-)
+
 vim.keymap.set("n", "G", "G$")
 vim.keymap.set("v", "G", "G$")
 vim.keymap.set("n", "gg", "gg0")
@@ -63,10 +59,15 @@ vim.keymap.set("n", "<leader><leader>²", ":argdo %s/")
 vim.keymap.set("n", "<leader><leader>*", "yiw :argdo %s/<C-r>0/")
 vim.keymap.set("n", "<leader>.*", ":.s/")
 vim.keymap.set("n", "<leader>..*", "yiw :.s/<C-r>0/")
+vim.keymap.set("n", "<leader>.e", "yiw :.,$s/")
+vim.keymap.set("n", "<leader>..e", "yiw :.,$s/<C-r>0/")
 
 vim.cmd[[autocmd BufWritePre * :%s/\s\+$//e]]
 
 vim.keymap.set("n", "<leader>_" ,":!")
+vim.keymap.set("n", ";","/def ")
 -- opens up a terminal
 vim.keymap.set("n","<leader><leader>k" ,":sp | hor resize 10 | term<CR> A")
+
+vim.keymap.set("n","<F4>", ":w <CR> bf_lyw :sp | hor resize 10 | term pytest % -k <C-r>0<CR>")
 --\| hor resize 10 \| term
