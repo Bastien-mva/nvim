@@ -68,6 +68,7 @@ vim.keymap.set("n", "<leader>_" ,":!")
 vim.keymap.set("n", ";","/def ")
 -- opens up a terminal
 vim.keymap.set("n","<leader><leader>k" ,":sp | hor resize 10 | term<CR> A")
+vim.keymap.set("n","<leader><leader>i" ,":sp | hor resize 10 | term ipython <CR> A")
 
 vim.keymap.set("n","<F4>", ":w <CR> bf_lyw :sp | hor resize 10 | term pytest % -k <C-r>0<CR>")
 --\| hor resize 10 \| term
