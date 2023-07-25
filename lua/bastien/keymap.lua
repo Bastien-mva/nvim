@@ -13,6 +13,14 @@ options = vim.tbl_extend("force", options, opts)
 end
 vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
+
+function remap(mode, lhs, rhs, opts)
+local options = { noremap = false }
+if opts then
+options = vim.tbl_extend("force", options, opts)
+end
+vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
 -- can remove and copy lines adding a leader in order to paste with ctrl v
 map("n", "<leader>y",  "\"+y")
 map("v", "<leader>y",  "\"+y")
@@ -71,4 +79,8 @@ vim.keymap.set("n","<leader><leader>k" ,":sp | hor resize 10 | term<CR> A")
 vim.keymap.set("n","<leader><leader>i" ,":sp | hor resize 10 | term ipython <CR> A")
 
 vim.keymap.set("n","<F4>", ":w <CR> bf_lyw :sp | hor resize 10 | term pytest % -k <C-r>0<CR>")
+-- vim.keymap.set("n","<leader>gd",":vs <CR>:<C-U>TmuxNavigatePrevious<cr>ZZ")
+-- vim.cmd[[noremap <leader><leader>]]
+remap("n","<leader><leader>gd", ":vs <CR> gd")
+-- vim.keymap.set("n","<leader><leader>gd","gd :vs <CR> <C-o>")
 --\| hor resize 10 \| term
