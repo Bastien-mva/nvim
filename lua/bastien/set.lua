@@ -43,3 +43,5 @@ vim.g.neoformat_try_node_exe = 1
 vim.cmd[[call neomake#configure#automake('nrw', 1)]]
 
 vim.cmd[[let g:neomake_python_enabled_makers = ['pylint'] ]]
+vim.g.slime_target = "neovim"
+vim.g.slime_no_mappings = 1
