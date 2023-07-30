@@ -9,9 +9,9 @@ vim.cmd [[packadd packer.nvim]]
 -- require'lspconfig'.pyright.setup{}
 
 
-require("mason").setup({
-        PATH = "prepend", -- "skip" seems to cause the spawning error
-    })
+-- require("mason").setup({
+--         PATH = "prepend", -- "skip" seems to cause the spawning error
+--     })
 
 return require('packer').startup(function()
   -- Packer can manage itself
