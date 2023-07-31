@@ -9,13 +9,10 @@ vim.cmd [[packadd packer.nvim]]
 -- require'lspconfig'.pyright.setup{}
 
 
--- require("mason").setup({
---         PATH = "prepend", -- "skip" seems to cause the spawning error
---     })
-
 return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  -- use {'williamboman/mason.nvim', config = function() require('mason').setup{PATH = "prepend"}end}
   use 'folke/tokyonight.nvim'
   use 'ThePrimeagen/vim-be-good'
 -- to see the branch name in the ligheline
@@ -30,7 +27,7 @@ return require('packer').startup(function()
   use 'christoomey/vim-tmux-navigator'
 -- -- Comment code
   use 'tpope/vim-commentary'
-  use 'vim-scripts/Conque-Shell'
+  use 'jpalardy/vim-slime'
   -- use 'dense-analysis/ale'
 -- -- format  code
   -- use 'sbdchd/neoformat'
@@ -46,9 +43,8 @@ return require('packer').startup(function()
            requires =
            {
             -- LSP Support
-                    {'williamboman/mason.nvim'},
                     {'neovim/nvim-lspconfig'},
-                    {'williamboman/mason-lspconfig.nvim'},
+                    -- {'williamboman/mason-lspconfig.nvim'},
                     -- Autocompletion
                     {'hrsh7th/nvim-cmp'},
                     {'hrsh7th/cmp-buffer'},
@@ -63,7 +59,8 @@ return require('packer').startup(function()
                     {'honza/vim-snippets'},
                     -- {'prafamadriz/friendly-snippets'},
             }
-                                                                     }
+        }
+
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
@@ -72,11 +69,14 @@ return require('packer').startup(function()
   -- use "junegunn/fzf.vim"
   -- to go to definition
   use {'rmagatti/goto-preview', config = function() require('goto-preview').setup{default_mappings = true}end }
+-- require("mason").setup({
+--         PATH = "prepend", -- "skip" seems to cause the spawning error
+--     })
   -- use 'pechorin/any-jump.vim'
   -- to highlight erros
   -- use 'dense-analysis/ale'
   -- to get output in anoter window (REPL)
-  use 'tpope/vim-dispatch'
+  -- use 'tpope/vim-dispatch'
   -- error highlighting
   use 'lervag/vimtex'
   -- use 'Shougo/deoplete.nvim'
