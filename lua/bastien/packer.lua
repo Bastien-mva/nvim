@@ -28,6 +28,7 @@ return require('packer').startup(function()
 -- -- Comment code
   use 'tpope/vim-commentary'
   use 'jpalardy/vim-slime'
+  use 'neovim/nvim-lspconfig'
   -- use 'dense-analysis/ale'
 -- -- format  code
   -- use 'sbdchd/neoformat'
@@ -39,27 +40,27 @@ return require('packer').startup(function()
   use 'neomake/neomake'
 -- fuzzy finding
 -- use { "junegunn/fzf", run = ":call fzf#install()" }
-   use {'VonHeikemen/lsp-zero.nvim',
-           requires =
-           {
-            -- LSP Support
-                    {'neovim/nvim-lspconfig'},
-                    -- {'williamboman/mason-lspconfig.nvim'},
-                    -- Autocompletion
-                    {'hrsh7th/nvim-cmp'},
-                    {'hrsh7th/cmp-buffer'},
-                    {'hrsh7th/cmp-path'},
-                    {'saadparwaiz1/cmp_luasnip'},
-                    {'hrsh7th/cmp-nvim-lsp'},
-                    {'hrsh7th/cmp-nvim-lua'},
+   -- use {'VonHeikemen/lsp-zero.nvim',
+   --         requires =
+   --         {
+   --          -- LSP Support
+   --                  {'neovim/nvim-lspconfig'},
+   --                  -- {'williamboman/mason-lspconfig.nvim'},
+   --                  -- Autocompletion
+   --                  {'hrsh7th/nvim-cmp'},
+   --                  {'hrsh7th/cmp-buffer'},
+   --                  {'hrsh7th/cmp-path'},
+   --                  {'saadparwaiz1/cmp_luasnip'},
+   --                  {'hrsh7th/cmp-nvim-lsp'},
+   --                  {'hrsh7th/cmp-nvim-lua'},
 
-                    -- Snippets
-                    {'L3MON4D3/LuaSnip'
-                    },
-                    {'honza/vim-snippets'},
-                    -- {'prafamadriz/friendly-snippets'},
-            }
-        }
+   --                  -- Snippets
+   --                  {'L3MON4D3/LuaSnip'
+   --                  },
+   --                  {'honza/vim-snippets'},
+   --                  -- {'prafamadriz/friendly-snippets'},
+   --          }
+   --      }
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
