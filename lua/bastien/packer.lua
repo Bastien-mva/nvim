@@ -38,6 +38,9 @@ return require('packer').startup(function()
 -- -- pairs brackets
   use 'jiangmiao/auto-pairs'
   use 'neomake/neomake'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
 -- fuzzy finding
 -- use { "junegunn/fzf", run = ":call fzf#install()" }
    -- use {'VonHeikemen/lsp-zero.nvim',
@@ -47,9 +50,6 @@ return require('packer').startup(function()
    --                  {'neovim/nvim-lspconfig'},
    --                  -- {'williamboman/mason-lspconfig.nvim'},
    --                  -- Autocompletion
-   --                  {'hrsh7th/nvim-cmp'},
-   --                  {'hrsh7th/cmp-buffer'},
-   --                  {'hrsh7th/cmp-path'},
    --                  {'saadparwaiz1/cmp_luasnip'},
    --                  {'hrsh7th/cmp-nvim-lsp'},
    --                  {'hrsh7th/cmp-nvim-lua'},
