@@ -5,6 +5,7 @@
 
 -- Only required if you have packer configured as `opt`
 
+
 vim.cmd [[packadd packer.nvim]]
 -- require'lspconfig'.pyright.setup{}
 
@@ -29,6 +30,18 @@ return require('packer').startup(function()
   use 'tpope/vim-commentary'
   use 'jpalardy/vim-slime'
   use 'neovim/nvim-lspconfig'
+  use {
+  "folke/which-key.nvim",
+  config = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+    require("which-key").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
   -- use 'dense-analysis/ale'
 -- -- format  code
   -- use 'sbdchd/neoformat'
