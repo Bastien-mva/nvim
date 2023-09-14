@@ -16,6 +16,7 @@ vim.cmd[[autocmd FileType python nnoremap <buffer> <F5> :w  \| sp \| hor resize 
 vim.cmd[[autocmd FileType cpp nnoremap <buffer> <F6> :w \| sp \| hor resize 10 \|term  clang++ -I /home/bastien/miniconda3/pkgs/libstdcxx-devel_linux-64-11.3.0-h210ce93_19/x86_64-conda-linux-gnu/include/c++/11.3.0  % <CR> ]]
 vim.cmd[[autocmd FileType cpp nnoremap <buffer> <F7> :w \| sp \| hor resize 10 \|term  clang++ -I /home/bastien/miniconda3/pkgs/libstdcxx-devel_linux-64-11.3.0-h210ce93_19/x86_64-conda-linux-gnu/include/c++/11.3.0  % <CR> ZZ <CR> ]]
 vim.cmd[[autocmd FileType cpp nnoremap <buffer> <F8> :sp \| hor resize 10 \| term ./a.out <CR>]]
-vim.cmd[[autocmd FileType cpp nnoremap <buffer> <F9> :sp \| hor resize 10 \| term cmake -G "Unix Makefiles" .<CR>:! make <CR>]]
+vim.cmd[[autocmd FileType cpp nnoremap <buffer> <F9> :w \| sp \| hor resize 10 \| term cmake -G "Unix Makefiles" .<CR>:! make <CR>]]
 vim.cmd[[autocmd FileType markdown nnoremap <buffer> <F8> :w \| :!markdown % > index.html  <CR>]]
+vim.cmd[[autocmd FileType quarto nnoremap <buffer> <F8> :w \| :!quarto render %  <CR>]]
 
