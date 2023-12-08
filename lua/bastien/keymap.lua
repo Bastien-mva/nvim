@@ -68,6 +68,7 @@ vim.keymap.set("n", "<leader>.*", ":.s/")
 vim.keymap.set("n", "<leader>..*", "yiw :.s/<C-r>0/")
 vim.keymap.set("n", "<leader>.e", "yiw :.,$s/")
 vim.keymap.set("n", "<leader>..e", "yiw :.,$s/<C-r>0/")
+vim.keymap.set("n", "<leader>b", ":w <CR> :!black % <CR>")
 
 vim.cmd[[autocmd BufWritePre * :%s/\s\+$//e]]
 
