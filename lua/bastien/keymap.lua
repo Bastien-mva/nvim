@@ -83,7 +83,8 @@ vim.keymap.set("n","<leader><leader>r" ,":sp | hor resize 10 | term R <CR> A")
 vim.keymap.set("n","<F4>", ":w <CR> bf_lyw :sp | hor resize 10 | term pytest % -k <C-r>0<CR>")
 -- vim.keymap.set("n","<leader>gd",":vs <CR>:<C-U>TmuxNavigatePrevious<cr>ZZ")
 -- vim.cmd[[noremap <leader><leader>]]
-remap("n","<leader><leader>gd", ":vs <CR> gd")
+remap("n","<leader><leader>gd", "gpd <CR> |:sleep 200m <CR> :vs % <CR> <C-o> gP")
+remap("n","<leader><leader><leader>gd", "gpd <CR> |:sleep 1 <CR> :vs % <CR> <C-o> gP")
 -- for vim-slime
 -- vim.keymap.set("x", "<F9>", "<Plug>SlimeRegionSend")
 -- vim.keymap.set("n", "<F9>", "<Plug>SlimeParagraphSend")
