@@ -80,7 +80,9 @@ vim.keymap.set("n","<leader><leader>k" ,":sp | hor resize 10 | term<CR> A")
 vim.keymap.set("n","<leader><leader>i" ,":sp | hor resize 10 | term ipython <CR> A")
 vim.keymap.set("n","<leader><leader>r" ,":sp | hor resize 10 | term R <CR> A")
 
-vim.keymap.set("n","<F4>", ":w <CR> bf_lyw :sp | hor resize 10 | term pytest % -k <C-r>0<CR>")
+-- vim.keymap.set("n","<F4>", ":w <CR> [[wf_lyw :sp | hor resize 10 | term pytest % -k <C-r>0<CR>")
+remap("n","<F4>", ":w <CR> [[wf_lyw :sp | hor resize 10 | term pytest % -k <C-r>0<CR>")
+-- vim.keymap.set("n","<F4>", ":w <CR> [[wf_lyw ")
 -- vim.keymap.set("n","<leader>gd",":vs <CR>:<C-U>TmuxNavigatePrevious<cr>ZZ")
 -- vim.cmd[[noremap <leader><leader>]]
 remap("n","<leader><leader>gd", "gpd <CR> |:sleep 200m <CR> :vs % <CR> <C-o> gP")
