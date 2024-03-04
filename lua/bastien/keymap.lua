@@ -32,7 +32,7 @@ map("n","<leader>f", ":MaximizerToggle!<CR>")
 vim.g.tmux_navigator_no_mappings = 1
 
 map("i","jk", "<Esc>")
-map("i","llr", "\\left( \\right)<Esc>7hi")
+-- map("i","llr", "\\left( \\right)<Esc>7hi")
 map("n", "<C-j>", "10j")
 map("n", "<C-h>", "10h")
 map("n", "<C-l>", "10l")
