@@ -92,10 +92,11 @@ return require('packer').startup(function()
   -- to get output in anoter window (REPL)
   -- use 'tpope/vim-dispatch'
   -- error highlighting
-  use 'lervag/vimtex'
   -- use 'Shougo/deoplete.nvim'
   -- use 'sirVer/ultisnips'
   -- use 'honza/vim-snippets'
+
+  use 'lervag/vimtex'
   use 'engeljh/vim-latexfmt'
 
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})

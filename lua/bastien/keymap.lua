@@ -90,8 +90,8 @@ remap("n","<leader><leader><leader>gd", "gpd <CR> |:sleep 1 <CR> :vs % <CR> <C-o
 -- for vim-slime
 -- vim.keymap.set("x", "<F9>", "<Plug>SlimeRegionSend")
 -- vim.keymap.set("n", "<F9>", "<Plug>SlimeParagraphSend")
-vim.keymap.set("n", "<F7>", "<S-v> <Plug>SlimeRegionSend")
-vim.keymap.set("n", "<F9>", "<S-v> <Plug>SlimeParagraphSend")
+vim.keymap.set("n", "<F9>", "<S-v> <Plug>SlimeRegionSend j")
+vim.keymap.set("n", "<F7>", "<S-v> <Plug>SlimeParagraphSend")
 vim.g.slime_python_ipython = 1
 -- vim.keymap.set("n","<leader><leader>gd","gd :vs <CR> <C-o>")
 --\| hor resize 10 \| term
