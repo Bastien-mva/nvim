@@ -79,6 +79,8 @@ vim.keymap.set("n", ";","/def ")
 vim.keymap.set("n","<leader><leader>k" ,":sp | hor resize 10 | term<CR> A")
 vim.keymap.set("n","<leader><leader>i" ,":sp | hor resize 10 | term ipython <CR> A")
 vim.keymap.set("n","<leader><leader>r" ,":sp | hor resize 10 | term R <CR> A")
+-- vim.keymap.set("n", "<leader><leader>@", "lv3ldt$xlldf}llx")
+-- "xllvfdllx}")
 
 -- vim.keymap.set("n","<F4>", ":w <CR> [[wf_lyw :sp | hor resize 10 | term pytest % -k <C-r>0<CR>")
 remap("n","<F4>", ":w <CR> [[wf_lyw :sp | hor resize 10 | term pytest % -k <C-r>0<CR>")
