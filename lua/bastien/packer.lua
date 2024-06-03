@@ -30,6 +30,7 @@ return require('packer').startup(function()
   use 'tpope/vim-commentary'
   use 'jpalardy/vim-slime'
   use 'neovim/nvim-lspconfig'
+  use 'github/copilot.vim'
   use {
   "folke/which-key.nvim",
   config = function()
