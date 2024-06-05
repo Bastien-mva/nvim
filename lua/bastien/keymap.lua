@@ -33,6 +33,8 @@ vim.g.tmux_navigator_no_mappings = 1
 -- copilot
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap("i", "²", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.keymap.set("n","<leader>cc",":CopilotChatOpen<CR>")
+vim.keymap.set("n","<leader><leader>c",":CopilotChat")
 
 
 map("i","jk", "<Esc>")
