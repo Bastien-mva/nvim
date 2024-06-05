@@ -5,7 +5,6 @@
 
 -- Only required if you have packer configured as `opt`
 
-
 vim.cmd [[packadd packer.nvim]]
 -- require'lspconfig'.pyright.setup{}
 
@@ -26,6 +25,7 @@ return require('packer').startup(function()
   use 'szw/vim-maximizer'
 -- -- easily move across splits
   use 'christoomey/vim-tmux-navigator'
+
 -- -- Comment code
   use 'tpope/vim-commentary'
   use 'jpalardy/vim-slime'
@@ -83,6 +83,11 @@ return require('packer').startup(function()
       }
   -- use "junegunn/fzf.vim"
   -- to go to definition
+  use 'zbirenbaum/copilot.lua'
+  use {'CopilotC-Nvim/CopilotChat.nvim', branch = 'canary', config = function() require("CopilotChat").setup {
+    debug = true, -- Enable debugging
+  -- See Configuration section for rest
+  } end}
   use {'rmagatti/goto-preview', config = function() require('goto-preview').setup{default_mappings = true}end }
 -- require("mason").setup({
 --         PATH = "prepend", -- "skip" seems to cause the spawning error
