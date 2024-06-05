@@ -30,6 +30,10 @@ map("i","<C-v>", "<C-r>+")
 map("n","<leader>f", ":MaximizerToggle!<CR>")
 
 vim.g.tmux_navigator_no_mappings = 1
+-- copilot
+vim.g.copilot_no_tab_map = true
+vim.api.nvim_set_keymap("i", "²", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+
 
 map("i","jk", "<Esc>")
 -- map("i","llr", "\\left( \\right)<Esc>7hi")
