@@ -2,6 +2,7 @@ vim.opt.guicursor = ""
 
 vim.cmd[[set nocompatible]]
 vim.cmd[[let g:neoformat_try_node_exe = 1]]
+vim.cmd[[let g:copilot_filetypes = {'tex': v:false}]]
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
