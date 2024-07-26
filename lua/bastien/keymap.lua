@@ -36,7 +36,10 @@ vim.api.nvim_set_keymap("i", "²", 'copilot#Accept("<CR>")', { silent = true, ex
 vim.keymap.set("n","<leader>cc",":CopilotChatOpen<CR>")
 vim.keymap.set("n","<leader><leader>c",":CopilotChat")
 vim.api.nvim_set_keymap('v', ':syno', ':<C-u>CopilotChatSynonym<CR>', {silent = true})
+vim.api.nvim_set_keymap('v', ':acti', ':<C-u>CopilotChatActive<CR>', {silent = true})
 vim.api.nvim_set_keymap('v', ':refo', ':<C-u>CopilotChatReformulate<CR>', {silent = true})
+vim.api.nvim_set_keymap('v', ':faut', ':<C-u>CopilotChatFaute<CR>', {silent = true})
+vim.api.nvim_set_keymap('v', ':trans', ':<C-u>CopilotChatTranslate<CR>', {silent = true})
 
 map("i","jk", "<Esc>")
 -- map("i","llr", "\\left( \\right)<Esc>7hi")

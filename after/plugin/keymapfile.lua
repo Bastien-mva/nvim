@@ -12,3 +12,4 @@ vim.cmd[[autocmd FileType tex nnoremap <buffer> èèneq i\begin{equation} <CR> \
 vim.cmd[[autocmd FileType tex inoremap <buffer> èèdln \dln  \drn <Esc> k 4li]]
 vim.cmd[[autocmd FileType tex nnoremap <buffer> èèdln i \dln  \drn <Esc> k 4li]]
 vim.cmd[[autocmd FileType python nnoremap <leader><leader>p :!pylint % <CR>]]
+vim.cmd[[autocmd FileType tex nnoremap <buffer> èèi i\begin{itemize} <CR> \end{itemize} <Esc><S-o>]]

@@ -25,7 +25,6 @@ return require('packer').startup(function()
   use 'szw/vim-maximizer'
 -- -- easily move across splits
   use 'christoomey/vim-tmux-navigator'
-
 -- -- Comment code
   use 'tpope/vim-commentary'
   use 'jpalardy/vim-slime'
@@ -89,6 +88,28 @@ return require('packer').startup(function()
   -- See Configuration section for rest
   } end}
   use {'rmagatti/goto-preview', config = function() require('goto-preview').setup{default_mappings = true}end }
+  -- Grammatical errors with ltex
+  use {
+    "barreiroleo/ltex_extra.nvim",
+    ft = { "markdown", "tex" },
+    dependencies = { "neovim/nvim-lspconfig" },
+    -- yes, you can use the opts field, just I'm showing the setup explicitly
+    config = function()
+        require("ltex_extra").setup {
+            server_opts = {
+                capabilities = your_capabilities,
+                on_attach = function(client, bufnr)
+                    -- your on_attach process
+                end,
+                settings = {
+                    ltex = {
+                        dictionary = {['en-US'] = {'overdispersion'}},
+                    }
+                }
+            },
+        }
+    end
+}
 -- require("mason").setup({
 --         PATH = "prepend", -- "skip" seems to cause the spawning error
 --     })
