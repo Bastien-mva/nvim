@@ -11,5 +11,6 @@ vim.cmd[[autocmd FileType tex inoremap <buffer> èèneq \begin{equation} <CR> \e
 vim.cmd[[autocmd FileType tex nnoremap <buffer> èèneq i\begin{equation} <CR> \end{equation} <Esc><S-o>]]
 vim.cmd[[autocmd FileType tex inoremap <buffer> èèdln \dln  \drn <Esc> k 4li]]
 vim.cmd[[autocmd FileType tex nnoremap <buffer> èèdln i \dln  \drn <Esc> k 4li]]
+vim.cmd[[autocmd FileType markdown nnoremap <buffer> <F6>  :w <CR> :!./make_cv.ps1 <CR>]]
 vim.cmd[[autocmd FileType python nnoremap <leader><leader>p :!pylint % <CR>]]
 vim.cmd[[autocmd FileType tex nnoremap <buffer> èèi i\begin{itemize} <CR> \end{itemize} <Esc><S-o>]]
