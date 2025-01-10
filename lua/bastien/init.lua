@@ -7,3 +7,5 @@ require('bastien.keymap')
 --         PATH = "prepend", -- "skip" seems to cause the spawning error
 --     })
 require'lspconfig'.pylsp.setup{}
+
+
