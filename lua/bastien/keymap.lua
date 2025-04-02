@@ -38,6 +38,7 @@ vim.keymap.set("n","<leader><leader>c",":CopilotChat")
 vim.api.nvim_set_keymap('v', ':syno', ':<C-u>CopilotChatSynonym<CR>', {silent = true})
 vim.api.nvim_set_keymap('v', ':acti', ':<C-u>CopilotChatActive<CR>', {silent = true})
 vim.api.nvim_set_keymap('v', ':refo', ':<C-u>CopilotChatReformulate<CR>', {silent = true})
+vim.api.nvim_set_keymap('v', ':rewi', ':<C-u>CopilotChatRewrite<CR>', {silent = true})
 vim.api.nvim_set_keymap('v', ':faut', ':<C-u>CopilotChatFaute<CR>', {silent = true})
 vim.api.nvim_set_keymap('v', ':trans', ':<C-u>CopilotChatTranslate<CR>', {silent = true})
 
@@ -107,3 +108,11 @@ vim.keymap.set("n", "<F7>", "<S-v> <Plug>SlimeParagraphSend")
 vim.g.slime_python_ipython = 1
 -- vim.keymap.set("n","<leader><leader>gd","gd :vs <CR> <C-o>")
 --\| hor resize 10 \| term
+-- REMOVE COPILOT ON PYTHON FILES
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    vim.b.copilot_enabled = 0
+  end,
+})
+
