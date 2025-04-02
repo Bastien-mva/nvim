@@ -36,6 +36,7 @@ vim.api.nvim_set_keymap("i", "²", 'copilot#Accept("<CR>")', { silent = true, ex
 vim.keymap.set("n","<leader>cc",":CopilotChatOpen<CR>")
 vim.keymap.set("n","<leader><leader>c",":CopilotChat")
 vim.api.nvim_set_keymap('v', ':syno', ':<C-u>CopilotChatSynonym<CR>', {silent = true})
+vim.api.nvim_set_keymap('v', ':fre', ':<C-u>CopilotChatFrench<CR>', {silent = true})
 vim.api.nvim_set_keymap('v', ':acti', ':<C-u>CopilotChatActive<CR>', {silent = true})
 vim.api.nvim_set_keymap('v', ':refo', ':<C-u>CopilotChatReformulate<CR>', {silent = true})
 vim.api.nvim_set_keymap('v', ':rewi', ':<C-u>CopilotChatRewrite<CR>', {silent = true})
@@ -94,7 +95,7 @@ vim.keymap.set("n","<leader><leader>r" ,":sp | hor resize 10 | term R <CR> A")
 -- "xllvfdllx}")
 
 -- vim.keymap.set("n","<F4>", ":w <CR> [[wf_lyw :sp | hor resize 10 | term pytest % -k <C-r>0<CR>")
-remap("n","<F4>", ":w <CR> [[wf_lyw :sp | hor resize 10 | term pytest % -k <C-r>0<CR>")
+remap("n","<F4>", ":w <CR> [[wf_lyw :sp | hor resize 10 | term python -m pytest % -k <C-r>0<CR>")
 -- vim.keymap.set("n","<F4>", ":w <CR> [[wf_lyw ")
 -- vim.keymap.set("n","<leader>gd",":vs <CR>:<C-U>TmuxNavigatePrevious<cr>ZZ")
 -- vim.cmd[[noremap <leader><leader>]]

@@ -1,6 +1,8 @@
 vim.opt.guicursor = ""
 
 vim.cmd[[set nocompatible]]
+vim.cmd[[set undodir=~/.vim/undodir]]
+vim.cmd[[set undofile]]
 vim.cmd[[let g:neoformat_try_node_exe = 1]]
 vim.cmd[[let g:copilot_filetypes = {'tex': v:false}]]
 
