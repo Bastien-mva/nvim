@@ -4,7 +4,12 @@ vim.cmd[[set nocompatible]]
 vim.cmd[[set undodir=~/.vim/undodir]]
 vim.cmd[[set undofile]]
 vim.cmd[[let g:neoformat_try_node_exe = 1]]
-vim.cmd[[let g:copilot_filetypes = {'tex': v:false}]]
+-- vim.cmd[[let g:copilot_filetypes = {'tex': v:false}]]
+vim.cmd [[
+highlight! TabLineSel ctermfg=15 ctermbg=4 cterm=bold
+highlight! TabLine     ctermfg=15 ctermbg=8 cterm=none
+highlight! TabLineFill ctermbg=0
+]]
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -22,11 +27,11 @@ vim.opt.wrap = false
 vim.opt.scrolloff = 7
 
 -- Set statusbar
-vim.g.lightline = {
-	    colorscheme = 'codedark',
-	      active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
-	        component_function = { gitbranch = 'gitbranch#name'},
-}
+-- vim.g.lightline = {
+-- 	    colorscheme = 'codedark',
+-- 	      active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
+-- 	        component_function = { gitbranch = 'gitbranch#name'},
+-- }
 
 -- remove auto-commentary at the next line
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")

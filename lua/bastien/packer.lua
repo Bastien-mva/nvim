@@ -21,6 +21,26 @@ return require('packer').startup(function()
   use 'tomasiser/vim-code-dark'
 -- -- lightline
   use 'itchyny/lightline.vim'
+  -- use {
+  -- 'itchyny/lightline.vim',
+  -- config = function()
+  --   vim.g.lightline = {
+  --     active = {
+  --       left = {
+  --         { 'mode', 'paste' },
+  --         { 'gitbranch', 'readonly', 'filename', 'modified' }
+  --       },
+  --       right = {
+  --         { 'lineinfo' },
+  --         { 'percent' }
+  --       }
+  --     },
+  --     component_function = {
+  --       gitbranch = 'gitbranch#name'
+  --     }
+  --   }
+  -- end
+-- }
 -- -- maximize the splits
   use 'szw/vim-maximizer'
 -- -- easily move across splits

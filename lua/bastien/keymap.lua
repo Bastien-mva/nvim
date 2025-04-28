@@ -33,12 +33,15 @@ vim.g.tmux_navigator_no_mappings = 1
 -- copilot
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap("i", "²", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-vim.keymap.set("n","<leader>cc",":CopilotChatOpen<CR>")
+-- vim.keymap.set("n","<leader>cc",":CopilotChatOpen<CR>")
+vim.keymap.set("n", "<leader>cc", ":CopilotChatOpen<CR>:wincmd L<CR>")
+-- vim.keymap.set("n", "<leader>cc", ":CopilotChatOpen<CR>")
 vim.keymap.set("n","<leader><leader>c",":CopilotChat")
 vim.api.nvim_set_keymap('v', ':syno', ':<C-u>CopilotChatSynonym<CR>', {silent = true})
 vim.api.nvim_set_keymap('v', ':fre', ':<C-u>CopilotChatFrench<CR>', {silent = true})
 vim.api.nvim_set_keymap('v', ':acti', ':<C-u>CopilotChatActive<CR>', {silent = true})
 vim.api.nvim_set_keymap('v', ':refo', ':<C-u>CopilotChatReformulate<CR>', {silent = true})
+vim.api.nvim_set_keymap('v', ':repa', ':<C-u>CopilotChatReformulatepackage<CR>', {silent = true})
 vim.api.nvim_set_keymap('v', ':rewi', ':<C-u>CopilotChatRewrite<CR>', {silent = true})
 vim.api.nvim_set_keymap('v', ':faut', ':<C-u>CopilotChatFaute<CR>', {silent = true})
 vim.api.nvim_set_keymap('v', ':trans', ':<C-u>CopilotChatTranslate<CR>', {silent = true})
