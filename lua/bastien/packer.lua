@@ -1,18 +1,13 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
 
 vim.cmd [[packadd packer.nvim]]
--- require'lspconfig'.pyright.setup{}
 
 
 return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  -- use {'williamboman/mason.nvim', config = function() require('mason').setup{PATH = "prepend"}end}
   use 'folke/tokyonight.nvim'
   use 'ThePrimeagen/vim-be-good'
 -- to see the branch name in the ligheline
@@ -21,26 +16,6 @@ return require('packer').startup(function()
   use 'tomasiser/vim-code-dark'
 -- -- lightline
   use 'itchyny/lightline.vim'
-  -- use {
-  -- 'itchyny/lightline.vim',
-  -- config = function()
-  --   vim.g.lightline = {
-  --     active = {
-  --       left = {
-  --         { 'mode', 'paste' },
-  --         { 'gitbranch', 'readonly', 'filename', 'modified' }
-  --       },
-  --       right = {
-  --         { 'lineinfo' },
-  --         { 'percent' }
-  --       }
-  --     },
-  --     component_function = {
-  --       gitbranch = 'gitbranch#name'
-  --     }
-  --   }
-  -- end
--- }
 -- -- maximize the splits
   use 'szw/vim-maximizer'
 -- -- easily move across splits
@@ -62,40 +37,12 @@ return require('packer').startup(function()
     }
   end
 }
-  -- use 'dense-analysis/ale'
--- -- format  code
-  -- use 'sbdchd/neoformat'
-  -- use('jose-elias-alvarez/null-ls.nvim')
-  -- use('MunifTanjim/prettier.nvim')
-  -- taggin bar to know where we are
--- -- pairs brackets
   use 'jiangmiao/auto-pairs'
   use 'neomake/neomake'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
--- fuzzy finding
--- use { "junegunn/fzf", run = ":call fzf#install()" }
-   -- use {'VonHeikemen/lsp-zero.nvim',
-   --         requires =
-   --         {
-   --          -- LSP Support
-   --                  {'neovim/nvim-lspconfig'},
-   --                  -- {'williamboman/mason-lspconfig.nvim'},
-   --                  -- Autocompletion
-   --                  {'saadparwaiz1/cmp_luasnip'},
-   --                  {'hrsh7th/cmp-nvim-lsp'},
-   --                  {'hrsh7th/cmp-nvim-lua'},
-
-   --                  -- Snippets
-   --                  {'L3MON4D3/LuaSnip'
-   --                  },
-   --                  {'honza/vim-snippets'},
-   --                  -- {'prafamadriz/friendly-snippets'},
-   --          }
-   --      }
-
-    use {
+  use {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
         -- or                            , branch = '0.1.x',
           requires = { {'nvim-lua/plenary.nvim'} }
@@ -130,19 +77,6 @@ return require('packer').startup(function()
         }
     end
 }
--- require("mason").setup({
---         PATH = "prepend", -- "skip" seems to cause the spawning error
---     })
-  -- use 'pechorin/any-jump.vim'
-  -- to highlight erros
-  -- use 'dense-analysis/ale'
-  -- to get output in anoter window (REPL)
-  -- use 'tpope/vim-dispatch'
-  -- error highlighting
-  -- use 'Shougo/deoplete.nvim'
-  -- use 'sirVer/ultisnips'
-  -- use 'honza/vim-snippets'
-
   use 'lervag/vimtex'
   use 'engeljh/vim-latexfmt'
 

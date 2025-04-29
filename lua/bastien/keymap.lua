@@ -119,4 +119,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.b.copilot_enabled = 0
   end,
 })
-
