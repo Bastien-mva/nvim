@@ -42,15 +42,18 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
-  use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.4',
-        -- or                            , branch = '0.1.x',
-          requires = { {'nvim-lua/plenary.nvim'} }
+  use 'nvim-telescope/telescope.nvim'
+  use {'nvim-telescope/telescope-frecency.nvim',
+      requires = {"nvim-lua/plenary.nvim"},
+       version = "*",
+      config = function()
+        require("telescope").load_extension "frecency"
+      end,
       }
   -- use "junegunn/fzf.vim"
   -- to go to definition
   use 'zbirenbaum/copilot.lua'
-  use {'CopilotC-Nvim/CopilotChat.nvim', branch = 'canary', config = function() require("CopilotChat").setup {
+  use {'CopilotC-Nvim/CopilotChat.nvim', branch = 'canary', tag="2.11.1", config = function() require("CopilotChat").setup {
     debug = true, -- Enable debugging
   -- See Configuration section for rest
   } end}

@@ -26,8 +26,9 @@ map("n", "<leader>y",  "\"+y")
 map("v", "<leader>y",  "\"+y")
 map("n", "<leader>y",  "\"+Y")
 map("i","<C-v>", "<C-r>+")
-
 map("n","<leader>f", ":MaximizerToggle!<CR>")
+
+map("n","<leader><leader>rr", "_iprint('')<Esc>hvld$phhyi'$i,<Esc>p")
 
 vim.g.tmux_navigator_no_mappings = 1
 -- copilot
@@ -105,10 +106,8 @@ remap("n","<F4>", ":w <CR> [[wf_lyw :sp | hor resize 10 | term python -m pytest 
 remap("n","<leader><leader>gd", "gpd <CR> |:sleep 200m <CR> :vs % <CR> <C-o> gP")
 remap("n","<leader><leader><leader>gd", "gpd <CR> |:sleep 1 <CR> :vs % <CR> <C-o> gP")
 -- for vim-slime
--- vim.keymap.set("x", "<F9>", "<Plug>SlimeRegionSend")
--- vim.keymap.set("n", "<F9>", "<Plug>SlimeParagraphSend")
-vim.keymap.set("n", "<F9>", "<S-v> <Plug>SlimeRegionSend j")
-vim.keymap.set("n", "<F7>", "<S-v> <Plug>SlimeParagraphSend")
+-- vim.keymap.set("n", "<F9>", "<S-v> <Plug>SlimeRegionSend j")
+-- vim.keymap.set("n", "<F7>", "<S-v> <Plug>SlimeParagraphSend")
 vim.g.slime_python_ipython = 1
 -- vim.keymap.set("n","<leader><leader>gd","gd :vs <CR> <C-o>")
 --\| hor resize 10 \| term
