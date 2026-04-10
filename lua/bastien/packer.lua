@@ -53,9 +53,14 @@ return require('packer').startup(function(use)
     }
   use {'hrsh7th/cmp-buffer', after ="nvim-cmp"}
   use {'hrsh7th/cmp-path', after = "nvim-cmp"}
-  use 'nvim-telescope/telescope.nvim'
+  use {
+  "nvim-telescope/telescope.nvim",
+  cmd = "Telescope",
+}
+  -- use 'nvim-telescope/telescope.nvim'
   use {'nvim-telescope/telescope-frecency.nvim',
       requires = {"nvim-lua/plenary.nvim"},
+      after = "telescope.nvim",
        version = "*",
       config = function()
         require("telescope").load_extension "frecency"

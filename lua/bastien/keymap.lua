@@ -1,5 +1,6 @@
 -- vim.keymap.set("n", "<F2>", "x $ p")
 vim.g.mapleader = " "
+
 vim.cmd[[xnoremap i$ :<C-u> normal! T$vt$<CR>]]
 vim.cmd[[onoremap i$ :normal vi$<CR>]]
 vim.cmd[[xnoremap a$ :<C-u> normal!F$vf$<CR>]]
@@ -120,3 +121,10 @@ vim.o.shell = "bash"
 vim.o.shellcmdflag = "-c"
 vim.o.shellquote = ""
 vim.o.shellxquote = ""
+
+
+------- TELESCOPE
+vim.keymap.set('n', '<leader>tg', '<cmd>Telescope git_files<cr>')
+vim.keymap.set('n', '<leader>tt', '<cmd>Telescope live_grep<cr>')
+vim.keymap.set('n', '<leader>tb', '<cmd>Telescope buffers<cr>')
+vim.keymap.set('n', '<leader>ts', '<cmd>Telescope grep_string<cr>')
