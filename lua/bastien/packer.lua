@@ -22,7 +22,11 @@ return require('packer').startup(function(use)
   use 'jpalardy/vim-slime'
 
   use 'neovim/nvim-lspconfig'
-  use "williamboman/mason.nvim"
+  -- use "williamboman/mason.nvim"
+  use {
+  "williamboman/mason.nvim",
+  cmd = { "Mason", "MasonInstall", "MasonUpdate" },
+    }
   use "williamboman/mason-lspconfig.nvim"
 
   -- use 'github/copilot.vim'
