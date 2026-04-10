@@ -40,9 +40,15 @@ return require('packer').startup(function(use)
 }
   use 'jiangmiao/auto-pairs'
   use 'neomake/neomake'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
+  use {
+  "hrsh7th/nvim-cmp",
+  event = "InsertEnter",
+  config = function()
+      require("bastien.cmp")
+  end,
+    }
+  use {'hrsh7th/cmp-buffer', after ="nvim-cmp"}
+  use {'hrsh7th/cmp-path', after = "nvim-cmp"}
   use 'nvim-telescope/telescope.nvim'
   use {'nvim-telescope/telescope-frecency.nvim',
       requires = {"nvim-lua/plenary.nvim"},

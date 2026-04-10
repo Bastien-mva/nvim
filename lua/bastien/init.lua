@@ -1,6 +1,11 @@
-require('bastien.packer')
+-- require('bastien.packer')
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    require("bastien.packer")
+  end,
+})
 require('bastien.set')
-require('bastien.cmp')
+-- require('bastien.cmp')
 require('bastien.keymap')
 require('bastien.lsp')
 
