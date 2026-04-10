@@ -1,1 +1,2 @@
 vim.lsp.config("pyright", {})
+

@@ -7,7 +7,12 @@ vim.api.nvim_create_autocmd("VimEnter", {
 require('bastien.set')
 -- require('bastien.cmp')
 require('bastien.keymap')
-require('bastien.lsp')
+vim.api.nvim_create_autocmd("FileType", {
+  once = true,
+  callback = function()
+    require("bastien.lsp")
+  end,
+})
 
 -- require'lspconfig'.pylsp.setup{}
 
