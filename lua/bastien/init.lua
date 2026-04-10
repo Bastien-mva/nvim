@@ -1,18 +1,19 @@
--- require('bastien.packer')
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    require("bastien.packer")
-  end,
-})
+require('bastien.packer')
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   callback = function()
+--     require("bastien.packer")
+--   end,
+-- })
 require('bastien.set')
 -- require('bastien.cmp')
+require('bastien.lsp')
 require('bastien.keymap')
-vim.api.nvim_create_autocmd("FileType", {
-  once = true,
-  callback = function()
-    require("bastien.lsp")
-  end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+--   once = true,
+--   callback = function()
+--     require("bastien.lsp")
+--   end,
+-- })
 
 -- require'lspconfig'.pylsp.setup{}
 

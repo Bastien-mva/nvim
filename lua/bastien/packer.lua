@@ -21,13 +21,24 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use 'jpalardy/vim-slime'
 
-  use 'neovim/nvim-lspconfig'
-  -- use "williamboman/mason.nvim"
-  use {
-  "williamboman/mason.nvim",
-  cmd = { "Mason", "MasonInstall", "MasonUpdate" },
+  use {'neovim/nvim-lspconfig'}
+  -- use { "williamboman/mason.nvim", cmd = { "Mason", "MasonInstall", "MasonUpdate" }, }
+
+    use {
+      "williamboman/mason.nvim",
+      config = function()
+        require("mason").setup()
+      end,
     }
-  use "williamboman/mason-lspconfig.nvim"
+
+    use {
+      "williamboman/mason-lspconfig.nvim",
+      after = "mason.nvim",
+      config = function()
+        require("mason-lspconfig").setup()
+      end,
+    }
+
 
   -- use 'github/copilot.vim'
   use {
@@ -72,7 +83,6 @@ return require('packer').startup(function(use)
   use {
     "barreiroleo/ltex_extra.nvim",
     ft = { "markdown", "tex" },
-    dependencies = { "neovim/nvim-lspconfig" },
     -- yes, you can use the opts field, just I'm showing the setup explicitly
     config = function()
         require("ltex_extra").setup {
