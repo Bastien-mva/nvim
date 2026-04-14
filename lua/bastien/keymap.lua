@@ -1,3 +1,9 @@
+-- keymap.lua
+-- Keymaps et text objects personnalisés.
+-- Contient : text objects $...$ (LaTeX), navigation rapide, clipboard système,
+-- intégration Copilot CLI, resize Tmux, substitutions, ouverture de terminaux,
+-- lancement de tests pytest, et recherche Telescope.
+
 -- vim.keymap.set("n", "<F2>", "x $ p")
 vim.g.mapleader = " "
 
@@ -34,19 +40,68 @@ map("n","<leader><leader>rr", "_iprint('')<Esc>hvld$phhyi'$i,<Esc>p")
 vim.g.tmux_navigator_no_mappings = 1
 -- copilot
 vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap("i", "²", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.api.nvim_set_keymap("n", "<C-y>", 'i 1<CR>', { silent = true, expr = true })
 -- vim.keymap.set("n","<leader>cc",":CopilotChatOpen<CR>")
-vim.keymap.set("n", "<leader>cc", ":CopilotChatOpen<CR>:wincmd L<CR>")
--- vim.keymap.set("n", "<leader>cc", ":CopilotChatOpen<CR>")
-vim.keymap.set("n","<leader><leader>c",":CopilotChat")
-vim.api.nvim_set_keymap('v', ':syno', ':<C-u>CopilotChatSynonym<CR>', {silent = true})
-vim.api.nvim_set_keymap('v', ':fre', ':<C-u>CopilotChatFrench<CR>', {silent = true})
-vim.api.nvim_set_keymap('v', ':acti', ':<C-u>CopilotChatActive<CR>', {silent = true})
-vim.api.nvim_set_keymap('v', ':refo', ':<C-u>CopilotChatReformulate<CR>', {silent = true})
-vim.api.nvim_set_keymap('v', ':repa', ':<C-u>CopilotChatReformulatepackage<CR>', {silent = true})
-vim.api.nvim_set_keymap('v', ':rewi', ':<C-u>CopilotChatRewrite<CR>', {silent = true})
-vim.api.nvim_set_keymap('v', ':faut', ':<C-u>CopilotChatFaute<CR>', {silent = true})
-vim.api.nvim_set_keymap('v', ':trans', ':<C-u>CopilotChatTranslate<CR>', {silent = true})
+
+
+
+-- vim.keymap.set("n", "<leader>cc", function()
+--   -- fichier courant (chemin relatif au cwd)
+--   local file = vim.fn.expand("%")
+--   if file == "" then
+--     file = nil
+--   end
+
+--   -- ouvrir Copilot
+--   vim.cmd("vsplit")
+--   vim.cmd("terminal copilot --continue")
+--   vim.cmd("startinsert")
+
+--   -- injecter le contexte du fichier courant
+--   if file then
+--     local msg = "Je travaille sur le fichier @" .. file .. ".\n"
+--     vim.api.nvim_feedkeys(msg, "t", false)
+--   end
+-- end, { desc = "Open Copilot with current file context" })
+
+vim.keymap.set("n", "<leader><leader>cc", function()
+  -- ouvrir Copilot
+  vim.cmd("vsplit")
+  vim.cmd("terminal copilot")
+end, { desc = "Open Copilot with current file context" })
+vim.keymap.set("n", "<leader>cc", function()
+  -- ouvrir Copilot
+  vim.cmd("vsplit")
+  vim.cmd("terminal copilot --continue")
+end, { desc = "Open Copilot with current file context" })
+
+
+vim.keymap.set("t", "jk", [[<C-\><C-n>]],
+  { noremap = true, silent = true, desc = "Exit terminal mode" }
+)
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]],
+  { noremap = true, silent = true, desc = "Exit terminal mode" }
+)
+vim.keymap.set("v", "<leader>h", function()
+  -- 1. Récupérer les bornes de la sélection visuelle
+  local start_pos = vim.fn.getpos("'<")
+  local end_pos   = vim.fn.getpos("'>")
+
+  local start_line = start_pos[2] - 1
+  local end_line   = end_pos[2] - 1
+
+  -- 2. Extraire les lignes sélectionnées
+  local lines = vim.api.nvim_buf_get_lines(0, start_line, end_line + 1, false)
+  local text = table.concat(lines, "\n")
+
+  -- 3. Aller dans la fenêtre Copilot (à droite)
+  vim.cmd("wincmd h")
+
+  -- 4. Injecter le texte dans le terminal Copilot
+  local payload = "i Je parle du code suivant :\n" .. text .. "\n"
+
+  vim.api.nvim_feedkeys(payload, "t", false)
+end, { desc = "Send visual selection to Copilot CLI" })
 
 map("i","jk", "<Esc>")
 -- map("i","llr", "\\left( \\right)<Esc>7hi")
@@ -93,6 +148,8 @@ vim.keymap.set("n", "<leader>_" ,":!")
 vim.keymap.set("n", ";","/def ")
 -- opens up a terminal
 vim.keymap.set("n","<leader><leader>k" ,":sp | hor resize 10 | term<CR> A")
+vim.keymap.set("n","<leader><leader>h" ,":leftabove vsp | vert resize 40 | term<CR> A")
+vim.keymap.set("n","<leader><leader>l" ,":rightbelow vsp | vert resize 40 | term<CR> A")
 vim.keymap.set("n","<leader><leader>i" ,":sp | hor resize 10 | term ipython <CR> A")
 vim.keymap.set("n","<leader><leader>r" ,":sp | hor resize 10 | term R <CR> A")
 
@@ -125,6 +182,7 @@ vim.o.shellxquote = ""
 
 ------- TELESCOPE
 vim.keymap.set('n', '<leader>tg', '<cmd>Telescope git_files<cr>')
+vim.keymap.set('n', '<leader>tf', '<cmd>Telescope find_files<cr>')
 vim.keymap.set('n', '<leader>tt', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>tb', '<cmd>Telescope buffers<cr>')
 vim.keymap.set('n', '<leader>ts', '<cmd>Telescope grep_string<cr>')
