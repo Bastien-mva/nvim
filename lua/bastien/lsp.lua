@@ -9,8 +9,21 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.lsp.start({
       name = "pyright",
       cmd = { "pyright-langserver.cmd", "--stdio" },
-      root_dir = vim.fn.getcwd(),
+      -- root_dir = vim.fn.getcwd(),
     })
   end,
 })
+
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.lsp.start({
+      name = "codebook",
+      cmd = { "codebook", "lsp" }, -- ou "serve", selon ton install
+      -- root_dir = vim.fn.getcwd(),
+    })
+  end,
+})
+
 
