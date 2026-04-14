@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
 -- -- Comment code
   use 'tpope/vim-commentary'
   use 'jpalardy/vim-slime'
+  use 'rmagatti/logger.nvim'
 
   use {'neovim/nvim-lspconfig'}
   -- use { "williamboman/mason.nvim", cmd = { "Mason", "MasonInstall", "MasonUpdate" }, }
@@ -39,8 +40,6 @@ return require('packer').startup(function(use)
       end,
     }
 
-
-  -- use 'github/copilot.vim'
   use {
   "folke/which-key.nvim",
   config = function()
@@ -67,6 +66,22 @@ return require('packer').startup(function(use)
   use {
   "nvim-telescope/telescope.nvim",
   cmd = "Telescope",
+  dependencies = { "nvim-lua/plenary.nvim" },
+  config = function()
+    local actions = require("telescope.actions")
+    require("telescope").setup({
+      defaults = {
+        mappings = {
+          i = {
+            ["<C-o>"] = actions.select_vertical,
+          },
+          n = {
+            ["<C-o>"] = actions.select_vertical,
+          },
+        },
+      },
+    })
+  end
 }
   -- use 'nvim-telescope/telescope.nvim'
   use {'nvim-telescope/telescope-frecency.nvim',

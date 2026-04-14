@@ -38,3 +38,13 @@ vim.cmd[[call neomake#configure#automake('nrw', 1)]]
 vim.cmd[[let g:neomake_python_enabled_makers = ['pylint'] ]]
 vim.g.slime_target = "neovim"
 vim.g.slime_no_mappings = 1
+
+
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   callback = function()
+--     local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+--     if git_root and git_root ~= "" then
+--       vim.cmd("cd " .. git_root)
+--     end
+--   end,
+-- })
