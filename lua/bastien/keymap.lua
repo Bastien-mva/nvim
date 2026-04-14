@@ -32,7 +32,6 @@ end
 map("n", "<leader>y",  "\"+y")
 map("v", "<leader>y",  "\"+y")
 map("n", "<leader>y",  "\"+Y")
-map("i","<C-v>", "<C-r>+")
 map("n","<leader>f", ":MaximizerToggle!<CR>")
 
 map("n","<leader><leader>rr", "_iprint('')<Esc>hvld$phhyi'$i,<Esc>p")

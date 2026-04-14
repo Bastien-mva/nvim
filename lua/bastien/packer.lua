@@ -40,6 +40,7 @@ return require('packer').startup(function(use)
       end,
     }
 
+
   use {
   "folke/which-key.nvim",
   config = function()
@@ -63,26 +64,27 @@ return require('packer').startup(function(use)
     }
   use {'hrsh7th/cmp-buffer', after ="nvim-cmp"}
   use {'hrsh7th/cmp-path', after = "nvim-cmp"}
-  use {
+  -- use {
+  -- "nvim-telescope/telescope.nvim",
+  -- cmd = "Telescope",
+  -- }
+  use({
   "nvim-telescope/telescope.nvim",
-  cmd = "Telescope",
-  dependencies = { "nvim-lua/plenary.nvim" },
+  requires = { "nvim-lua/plenary.nvim" },
   config = function()
     local actions = require("telescope.actions")
+
     require("telescope").setup({
       defaults = {
         mappings = {
           i = {
-            ["<C-o>"] = actions.select_vertical,
-          },
-          n = {
-            ["<C-o>"] = actions.select_vertical,
+            ["<C-b>"] = actions.select_vertical,
           },
         },
       },
     })
-  end
-}
+  end,
+    })
   -- use 'nvim-telescope/telescope.nvim'
   use {'nvim-telescope/telescope-frecency.nvim',
       requires = {"nvim-lua/plenary.nvim"},
@@ -93,7 +95,7 @@ return require('packer').startup(function(use)
       end,
       }
   use 'zbirenbaum/copilot.lua'
-  use {'rmagatti/goto-preview', config = function() require('goto-preview').setup{default_mappings = true}end }
+  use {'rmagatti/goto-preview', config = function() require('goto-preview').setup{default_mappings = true, debug=false}end }
   -- Grammatical errors with ltex
   use {
     "barreiroleo/ltex_extra.nvim",
