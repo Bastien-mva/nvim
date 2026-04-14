@@ -1,4 +1,4 @@
-require('bastien.packer')
+require('bastien.lazy')
 -- vim.api.nvim_create_autocmd("VimEnter", {
 --   callback = function()
 --     require("bastien.packer")

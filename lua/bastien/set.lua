@@ -33,9 +33,8 @@ vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 vim.cmd[[let g:vimtex_compiler_latexmk_engines = {'lualatex':'-lualatex', 'luatex':'-lualatex'}]]
 vim.g.neoformat_try_node_exe = 1
-vim.cmd[[call neomake#configure#automake('nrw', 1)]]
-
-vim.cmd[[let g:neomake_python_enabled_makers = ['pylint'] ]]
+-- neomake : chargé en différé via lazy.nvim (voir lazy.lua)
+vim.g.neomake_python_enabled_makers = { 'pylint' }
 vim.g.slime_target = "neovim"
 vim.g.slime_no_mappings = 1
 
