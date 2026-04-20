@@ -19,8 +19,8 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function()
     vim.lsp.start({
-      name = "codebook",
-      cmd = { "codebook", "lsp" }, -- ou "serve", selon ton install
+      name = "marksman",
+      cmd = { "marksman", "server" }, -- ou "serve", selon ton install
       -- root_dir = vim.fn.getcwd(),
     })
   end,

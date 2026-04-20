@@ -42,7 +42,9 @@ vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap("n", "<C-y>", 'i 1<CR>', { silent = true, expr = true })
 -- vim.keymap.set("n","<leader>cc",":CopilotChatOpen<CR>")
 
-
+vim.keymap.set("n", "se", vim.diagnostic.open_float, {
+  desc = "Afficher diagnostic sous le curseur"
+})
 
 -- vim.keymap.set("n", "<leader>cc", function()
 --   -- fichier courant (chemin relatif au cwd)
@@ -149,7 +151,8 @@ vim.keymap.set("n", ";","/def ")
 vim.keymap.set("n","<leader><leader>k" ,":sp | hor resize 10 | term<CR> A")
 vim.keymap.set("n","<leader><leader>h" ,":leftabove vsp | vert resize 40 | term<CR> A")
 vim.keymap.set("n","<leader><leader>l" ,":rightbelow vsp | vert resize 40 | term<CR> A")
-vim.keymap.set("n","<leader><leader>i" ,":sp | hor resize 10 | term ipython <CR> A")
+vim.keymap.set("n","<leader><leader>i" ,":sp | hor resize 10 | term uv run ipython <CR> A")
+vim.keymap.set("n","<leader><leader><leader>i" ,":sp | hor resize 10 | term uv run ipython <CR> :TmuxNavigateDown <CR> :SlimeConfig <CR> <CR>")
 vim.keymap.set("n","<leader><leader>r" ,":sp | hor resize 10 | term R <CR> A")
 
 -- vim.keymap.set("n","<F4>", ":w <CR> [[wf_lyw :sp | hor resize 10 | term pytest % -k <C-r>0<CR>")
@@ -160,8 +163,11 @@ remap("n","<F4>", ":w <CR> [[wf_lyw :sp | hor resize 10 | term python -m pytest 
 remap("n","<leader><leader>gd", "gpd <CR> |:sleep 200m <CR> :vs % <CR> <C-o> gP")
 remap("n","<leader><leader><leader>gd", "gpd <CR> |:sleep 1 <CR> :vs % <CR> <C-o> gP")
 -- for vim-slime
---- vim.keymap.set("n", "<F9>", "<S-v> <Plug>SlimeRegionSend j")
--- vim.keymap.set("n", "<F7>", "<S-v> <Plug>SlimeParagraphSend")
+vim.keymap.set("n", "<F1>", "<Plug>SlimeLineSend")
+vim.keymap.set("n", "<F9>", "<Plug>SlimeRegionSend")
+vim.keymap.set("v", "<F9>", "<Plug>SlimeRegionSend")
+vim.keymap.set("n", "<F2>", "<Plug>SlimeParagraphSend")
+vim.keymap.set("n", "<C-F10>", ":%SlimeSend<CR>", { silent = true })
 vim.g.slime_python_ipython = 1
 -- vim.keymap.set("n","<leader><leader>gd","gd :vs <CR> <C-o>")
 --\| hor resize 10 \| term
